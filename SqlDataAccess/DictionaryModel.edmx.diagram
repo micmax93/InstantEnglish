@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="827e421fdae14a96ab661314f81220a4" Name="Diagram1">
+        <EntityTypeShape EntityType="PrimeDictionaryModel.Categories" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrimeDictionaryModel.Items" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrimeDictionaryModel.Words" Width="1.5" PointX="5.625" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="PrimeDictionaryModel.FK_CategoryItems" ManuallyRouted="false" />
+        <AssociationConnector Association="PrimeDictionaryModel.FK_ItemWords" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PrimeDictionaryModel.Stats" Width="1.5" PointX="2.625" PointY="4.125" />
+        <EntityTypeShape EntityType="PrimeDictionaryModel.Users" Width="1.5" PointX="6.25" PointY="4.25" />
+        <AssociationConnector Association="PrimeDictionaryModel.FK_Stats_Items" />
+        <AssociationConnector Association="PrimeDictionaryModel.FK_Stats_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
