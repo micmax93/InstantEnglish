@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSource", "DataSource", 
 		DataSource\PrimeDictionary_log.ldf = DataSource\PrimeDictionary_log.ldf
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{E6DC283E-F5C9-49F1-94C1-E3C69160217E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{FB10E58C-8BB5-4504-BF60-9C28117A6AA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{46F97B87-7CAF-4EB6-95ED-0B33BEBB2D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F97B87-7CAF-4EB6-95ED-0B33BEBB2D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F97B87-7CAF-4EB6-95ED-0B33BEBB2D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6DC283E-F5C9-49F1-94C1-E3C69160217E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DC283E-F5C9-49F1-94C1-E3C69160217E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DC283E-F5C9-49F1-94C1-E3C69160217E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DC283E-F5C9-49F1-94C1-E3C69160217E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB10E58C-8BB5-4504-BF60-9C28117A6AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB10E58C-8BB5-4504-BF60-9C28117A6AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB10E58C-8BB5-4504-BF60-9C28117A6AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB10E58C-8BB5-4504-BF60-9C28117A6AA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,24 @@
+﻿<Window x:Class="UI.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="300" Width="300">
+    <StackPanel>
+        <Label>Question</Label>
+        <ComboBox></ComboBox>
+        
+        <Label>Anwser</Label>
+        <ComboBox></ComboBox>
+        
+        <Label>Selection method</Label>
+        <ComboBox></ComboBox>
+        
+        <Label>Level</Label>
+        <Slider Minimum="0" Maximum="10" Interval="1"></Slider>
+        
+        <Label>Categories</Label>
+        <ListBox SelectionMode="Multiple">
+            <ListBoxItem>Kolory</ListBoxItem>
+            <ListBoxItem>Samoloty</ListBoxItem>
+        </ListBox>
+    </StackPanel>
+</Window>

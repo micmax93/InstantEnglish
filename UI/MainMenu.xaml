@@ -1,0 +1,11 @@
+﻿<Window x:Class="UI.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Menu" SizeToContent="WidthAndHeight" FontSize="22" Background="#FFD48248" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel >
+        <Button Margin="10">Start course</Button>
+        <Button Margin="10">Edit dictionary</Button>
+        <Button Margin="10">User stats</Button>
+        <Button Margin="10">Logout</Button>
+    </StackPanel>
+</Window>
