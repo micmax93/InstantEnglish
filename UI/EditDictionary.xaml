@@ -1,0 +1,43 @@
+﻿<Window x:Class="UI.EditDictionary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditDictionary" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0">Category</Label>
+        <ListBox Grid.Column="0" Grid.Row="1">
+            <ListBoxItem>Zad jeden</ListBoxItem>
+            <ListBoxItem>Zad dwa</ListBoxItem>
+            <ListBoxItem>Zad trzy</ListBoxItem>
+        </ListBox>
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <Button>Add</Button>
+            <Button>Add</Button>
+            <Button>Add</Button>
+        </StackPanel>
+
+        <Label Grid.Column="1" Grid.Row="0">Items</Label>
+        <ListBox Grid.Column="1" Grid.Row="1">
+            <ListBoxItem>Zad jeden</ListBoxItem>
+            <ListBoxItem>Zad dwa</ListBoxItem>
+            <ListBoxItem>Zad trzy</ListBoxItem>
+        </ListBox>
+
+        <Label Grid.Column="2" Grid.Row="0">Words</Label>
+        <ListBox Grid.Column="2" Grid.Row="1">
+            <ListBoxItem>Zad jeden</ListBoxItem>
+            <ListBoxItem>Zad dwa</ListBoxItem>
+            <ListBoxItem>Zad trzy</ListBoxItem>
+        </ListBox>
+    </Grid>
+</Window>
