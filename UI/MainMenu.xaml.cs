@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace UI
 {
@@ -22,6 +10,33 @@ namespace UI
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void StartCourse(object sender, RoutedEventArgs e)
+        {
+            var qw = new Questionary();
+            qw.Owner = this;
+            qw.ShowDialog();
+        }
+
+        private void OpenSettings(object sender, RoutedEventArgs e)
+        {
+            var st = new Settings();
+            st.Owner = this;
+            st.ShowDialog();
+        }
+
+        private void EditDict(object sender, RoutedEventArgs e)
+        {
+            var ed = new EditDictionary();
+            ed.Owner = this;
+            ed.ShowDialog();
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

@@ -27,7 +27,7 @@
         <Label Grid.Column="0" Grid.Row="1">Password:</Label>
         <PasswordBox Grid.Column="1" Grid.Row="1" MinWidth="200" Background="White" Margin="3" PasswordChanged="OnPasswordChanged"/>
 
-        <Button Grid.Column="0" Grid.Row="2" Margin="5" Command="{Binding DoLogin}">Login</Button>
+        <Button Grid.Column="0" Grid.Row="2" Margin="5" Command="{Binding DoLogin}" Click="TryLogin">Login</Button>
         <Button Grid.Column="1" Grid.Row="2" Margin="5" Command="{Binding DoRegister}">Register</Button>
     </Grid>
 </Window>

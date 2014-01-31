@@ -28,5 +28,13 @@ namespace UI
             LoginVM.Password = Convert.ToBase64String(hash);
         }
 
+        private void TryLogin(object sender, RoutedEventArgs e)
+        {
+            var menu = new MainMenu();
+            menu.Owner = this;
+            menu.Closed += (o, args) => this.Show();
+            this.Hide();
+            menu.ShowDialog();
+        }
     }
 }

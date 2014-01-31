@@ -70,14 +70,14 @@ namespace ViewModel
 
         void AuthtenticateUser()
         {
-            if (Password == "ha#lo")
-            {
-                MessageBox.Show("Zalogowano");
-            }
-            else
-            {
-                MessageBox.Show(Password);
-            }
+            //if (Password == "ha#lo")
+            //{
+            //    MessageBox.Show("Zalogowano");
+            //}
+            //else
+            //{
+            //    MessageBox.Show(Password);
+            //}
         }
 
         void RegsterNewUser()

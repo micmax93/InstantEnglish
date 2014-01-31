@@ -1,7 +1,7 @@
 ﻿<Window x:Class="UI.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Settings" Height="300" Width="300">
+        Title="Settings" Background="#FFD48248" FontSize="18" SizeToContent="WidthAndHeight" MinWidth="250">
     <StackPanel>
         <Label>Question</Label>
         <ComboBox></ComboBox>

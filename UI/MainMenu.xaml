@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Menu" SizeToContent="WidthAndHeight" FontSize="22" Background="#FFD48248" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <StackPanel >
-        <Button Margin="10">Start course</Button>
-        <Button Margin="10">Edit dictionary</Button>
-        <Button Margin="10">User stats</Button>
-        <Button Margin="10">Logout</Button>
+        <Button Margin="10" Padding="5" Click="StartCourse">Start course</Button>
+        <Button Margin="10" Padding="5" Click="OpenSettings">Settings</Button>
+        <Button Margin="10" Padding="5" Click="EditDict">Edit dictionary</Button>
+        <Button Margin="10" Padding="5">User stats</Button>
+        <Button Margin="10" Padding="5" Click="Logout">Logout</Button>
     </StackPanel>
 </Window>

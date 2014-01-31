@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Speech.Synthesis;
 
 namespace UI
 {
@@ -22,6 +23,14 @@ namespace UI
         public Questionary()
         {
             InitializeComponent();
+        }
+
+        private void StartSpeak(object sender, RoutedEventArgs e)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            synth.Rate = -5;
+            synth.Speak("Microsoft");
         }
     }
 }

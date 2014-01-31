@@ -13,12 +13,13 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-            <TextBox>
+        <WrapPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock>
                 And the question is?
                 What is mana mana?
-            </TextBox>
-        </StackPanel>
+            </TextBlock>
+            <Button Click="StartSpeak"><Image Source="sound_icon.png" Height="22"/></Button>
+        </WrapPanel>
         
         
         <Button Grid.Column="0" Grid.Row="1" Margin="5">
