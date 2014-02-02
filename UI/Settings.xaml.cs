@@ -17,10 +17,22 @@ namespace UI
 
         private void StartQuestionary(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show(svm.ResultCount + "\nContinue?","", MessageBoxButton.YesNo);
+            var count = svm.ResultCount;
+            if (count == null)
+            {
+                MessageBox.Show("Incomplete form.");
+                return;
+            }
+            var qs = svm.GenerateQuestionSet();
+            if (qs.Questions.Count == 0)
+            {
+                MessageBox.Show("No questions avalible.");
+                return;
+            }
+            var result = MessageBox.Show(count + "\nContinue?", "", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                new Questionary(svm.GenerateQuestionSet()).ShowDialog();
+                new Questionary(qs).ShowDialog();
             }
         }
     }

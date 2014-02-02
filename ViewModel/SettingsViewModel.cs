@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Navigation;
 using ElFartas.InstantEnglish.DAO;
 using ElFartas.InstantEnglish.Interfaces;
 
@@ -111,7 +107,7 @@ namespace ViewModel
             categories = categories.Where(c => items.Any(i=>i.CategoryId==c.Id));
             _questions = _questions.Where(q => items.Any(i => i.Id == q.ItemId));
 
-            Console.WriteLine(ResultCount ?? "Null");
+            //Console.WriteLine(ResultCount ?? "Null");
 
             return categories;
         }

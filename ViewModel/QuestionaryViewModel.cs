@@ -116,7 +116,7 @@ namespace ViewModel
                 }
                 double eval = (v - targetViews)/maxViews + (r - targetRatings)/maxRating;
                 sorted.Add(new KeyValuePair<double, QuestionaryViewModel>(eval, q));
-                Console.WriteLine(q.Question.Text + " " + eval);
+                //Console.WriteLine(q.Question.Text + " " + eval);
             }
             Questions = new Stack<QuestionaryViewModel>(sorted.OrderBy(e => e.Key).Select(e => e.Value));
         }

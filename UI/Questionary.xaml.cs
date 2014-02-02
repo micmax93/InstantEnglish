@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Drawing2D;
 using System.Windows;
 using System.Speech.Synthesis;
 using System.Windows.Controls;
@@ -26,6 +25,7 @@ namespace UI
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
             synth.Rate = -5;
+            synth.Volume = 100;
             synth.Speak(qs.Current.Question.Text);
         }
 

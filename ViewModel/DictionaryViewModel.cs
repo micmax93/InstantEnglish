@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows;
 using System.Windows.Input;
 using ElFartas.InstantEnglish.DAO;
 using ElFartas.InstantEnglish.Interfaces;
@@ -36,6 +34,8 @@ namespace ViewModel
 
         public event EventHandler CanExecuteChanged;
     }
+
+
     public class DictionaryViewModel
     {
         private IDataAccess dictionary;

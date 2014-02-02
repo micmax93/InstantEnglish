@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using ElFartas.InstantEnglish.Interfaces;
 using ViewModel;
 
 namespace UI

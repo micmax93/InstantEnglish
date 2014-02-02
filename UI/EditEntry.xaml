@@ -24,7 +24,7 @@
         <TextBox Grid.Row="0" Grid.Column="1" Margin="3" IsEnabled="{Binding CategoryEnabled}" Text="{Binding CategoryName}"/>
 
         <Label Grid.Row="1" Grid.Column="0">Level</Label>
-        <TextBox Grid.Row="1" Grid.Column="1"  Margin="3" PreviewTextInput="LevelInput" IsEnabled="{Binding CategoryEnabled}" >0</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1"  Margin="3" PreviewTextInput="LevelInput" IsEnabled="{Binding CategoryEnabled}" Text="{Binding CategoryLevelStr}"></TextBox>
 
         <Label Grid.Row="2" Grid.Column="0">Item</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="3" IsEnabled="{Binding ItemEnabled}" Text="{Binding ItemName}"/>

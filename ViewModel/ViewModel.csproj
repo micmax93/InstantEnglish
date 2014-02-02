@@ -54,10 +54,6 @@
     <Compile Include="UserStatsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{2AA2F7CA-02E7-4F9B-B23E-E4E4EA09229A}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{EA48CAE5-D744-4BF2-A0EC-B2BBAEF29019}</Project>
       <Name>DAO</Name>

@@ -4,7 +4,12 @@
     <Category>
       <Id>2</Id>
       <Name>Color</Name>
-      <Difficulty>2</Difficulty>
+      <Difficulty>3</Difficulty>
+    </Category>
+    <Category>
+      <Id>3</Id>
+      <Name>Numbers</Name>
+      <Difficulty>4</Difficulty>
     </Category>
   </Categories>
   <Items>
@@ -36,6 +41,41 @@
       <Id>6</Id>
       <Name>Pink</Name>
       <CategoryId>2</CategoryId>
+    </Item>
+    <Item>
+      <Id>7</Id>
+      <Name>One</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>8</Id>
+      <Name>Two</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>9</Id>
+      <Name>Four</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>10</Id>
+      <Name>Five</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>11</Id>
+      <Name>Ten</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>12</Id>
+      <Name>Six</Name>
+      <CategoryId>3</CategoryId>
+    </Item>
+    <Item>
+      <Id>13</Id>
+      <Name>Seven</Name>
+      <CategoryId>3</CategoryId>
     </Item>
   </Items>
   <Words>
@@ -81,6 +121,66 @@
       <Language>Polski</Language>
       <ItemId>6</ItemId>
     </Word>
+    <Word>
+      <Id>10</Id>
+      <Text>وردي</Text>
+      <Language>Arabic</Language>
+      <ItemId>6</ItemId>
+    </Word>
+    <Word>
+      <Id>11</Id>
+      <Text>أبيض</Text>
+      <Language>Arabic</Language>
+      <ItemId>2</ItemId>
+    </Word>
+    <Word>
+      <Id>12</Id>
+      <Text>أحمر</Text>
+      <Language>Arabic</Language>
+      <ItemId>5</ItemId>
+    </Word>
+    <Word>
+      <Id>13</Id>
+      <Text>Jeden</Text>
+      <Language>Polski</Language>
+      <ItemId>7</ItemId>
+    </Word>
+    <Word>
+      <Id>14</Id>
+      <Text>Dwa</Text>
+      <Language>Polski</Language>
+      <ItemId>8</ItemId>
+    </Word>
+    <Word>
+      <Id>15</Id>
+      <Text>Cztery</Text>
+      <Language>Polski</Language>
+      <ItemId>9</ItemId>
+    </Word>
+    <Word>
+      <Id>16</Id>
+      <Text>Pięć</Text>
+      <Language>Polski</Language>
+      <ItemId>10</ItemId>
+    </Word>
+    <Word>
+      <Id>17</Id>
+      <Text>Dziesięć</Text>
+      <Language>Polski</Language>
+      <ItemId>11</ItemId>
+    </Word>
+    <Word>
+      <Id>18</Id>
+      <Text>Sześć</Text>
+      <Language>Polski</Language>
+      <ItemId>12</ItemId>
+    </Word>
+    <Word>
+      <Id>19</Id>
+      <Text>Siedem</Text>
+      <Language>Polski</Language>
+      <ItemId>13</ItemId>
+    </Word>
   </Words>
   <Users>
     <User>
@@ -94,28 +194,84 @@
       <Id>0</Id>
       <UserId>0</UserId>
       <ItemId>6</ItemId>
-      <Correct>0</Correct>
-      <Failed>1</Failed>
-    </Stat>
-    <Stat>
-      <Id>0</Id>
-      <UserId>0</UserId>
-      <ItemId>5</ItemId>
       <Correct>2</Correct>
       <Failed>1</Failed>
     </Stat>
     <Stat>
       <Id>0</Id>
       <UserId>0</UserId>
+      <ItemId>5</ItemId>
+      <Correct>6</Correct>
+      <Failed>1</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
       <ItemId>4</ItemId>
-      <Correct>3</Correct>
-      <Failed>0</Failed>
+      <Correct>5</Correct>
+      <Failed>2</Failed>
     </Stat>
     <Stat>
       <Id>0</Id>
       <UserId>0</UserId>
       <ItemId>3</ItemId>
-      <Correct>3</Correct>
+      <Correct>6</Correct>
+      <Failed>1</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>2</ItemId>
+      <Correct>4</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>13</ItemId>
+      <Correct>2</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>12</ItemId>
+      <Correct>2</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>11</ItemId>
+      <Correct>2</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>10</ItemId>
+      <Correct>1</Correct>
+      <Failed>1</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>9</ItemId>
+      <Correct>2</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>8</ItemId>
+      <Correct>2</Correct>
+      <Failed>0</Failed>
+    </Stat>
+    <Stat>
+      <Id>0</Id>
+      <UserId>0</UserId>
+      <ItemId>7</ItemId>
+      <Correct>1</Correct>
       <Failed>0</Failed>
     </Stat>
   </Stats>

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 using ElFartas.InstantEnglish.DAO;
 using ElFartas.InstantEnglish.Interfaces;
-using Microsoft.Expression.Interactivity.Core;
 
 namespace ViewModel
 {
