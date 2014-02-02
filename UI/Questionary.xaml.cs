@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Speech.Synthesis;
+using System.Windows.Controls;
+using ViewModel;
 
 namespace UI
 {
@@ -20,17 +12,31 @@ namespace UI
     /// </summary>
     public partial class Questionary : Window
     {
-        public Questionary()
+        private QuestionSet qs;
+        public Questionary(QuestionSet questionSet)
         {
             InitializeComponent();
+            qs = questionSet;
+            this.DataContext = questionSet;
         }
 
         private void StartSpeak(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(qs.Current.Question.Text)) return;
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
             synth.Rate = -5;
-            synth.Speak("Microsoft");
+            synth.Speak(qs.Current.Question.Text);
+        }
+
+        private void OnAnwser(object sender, RoutedEventArgs e)
+        {
+            bool isCorrect = ((Button) sender).DataContext == qs.Current.CorrectAnwser;
+            MessageBox.Show(isCorrect ? "Correct" : "Failed");
+            
+            if (qs.Anwser(isCorrect)) return;
+            MessageBox.Show("Finished\nYour result is " + qs.Result + "%");
+            this.Close();
         }
     }
 }

@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using ViewModel;
 
 namespace UI
 {
@@ -19,9 +8,20 @@ namespace UI
     /// </summary>
     public partial class Settings : Window
     {
+        SettingsViewModel svm = new SettingsViewModel();
         public Settings()
         {
             InitializeComponent();
+            DataContext = svm;
+        }
+
+        private void StartQuestionary(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show(svm.ResultCount + "\nContinue?","", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                new Questionary(svm.GenerateQuestionSet()).ShowDialog();
+            }
         }
     }
 }

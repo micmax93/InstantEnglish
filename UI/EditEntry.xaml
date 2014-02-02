@@ -1,13 +1,16 @@
 ﻿<Window x:Class="UI.EditEntry"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EditEntry"  Background="#FFD48248" FontSize="18" SizeToContent="WidthAndHeight">
-    <Grid Margin="5">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Title="EditEntry"  Background="#FFD48248" FontSize="18" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5" MinWidth="250">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -18,24 +21,33 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0">Category</Label>
-        <TextBox Grid.Row="0" Grid.Column="1">Name</TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="3" IsEnabled="{Binding CategoryEnabled}" Text="{Binding CategoryName}"/>
 
         <Label Grid.Row="1" Grid.Column="0">Level</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" PreviewTextInput="LevelInput">0</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1"  Margin="3" PreviewTextInput="LevelInput" IsEnabled="{Binding CategoryEnabled}" >0</TextBox>
 
         <Label Grid.Row="2" Grid.Column="0">Item</Label>
-        <TextBox Grid.Row="2" Grid.Column="1">Name</TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="3" IsEnabled="{Binding ItemEnabled}" Text="{Binding ItemName}"/>
 
-        <Label Grid.Row="3" Grid.Column="0">Word</Label>
-        <TextBox Grid.Row="3" Grid.Column="1">Text</TextBox>
+        <Label Grid.Row="3" Grid.Column="0">Image</Label>
+        <Button Grid.Row="3" Grid.Column="1" Margin="3" IsEnabled="{Binding ItemEnabled}" Click="LoadImage">Load</Button>
+        <Image Name="ImagePreview"  Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" MaxHeight="150" Source="{Binding ImageSource}"/>
+
+        <Label Grid.Row="5" Grid.Column="0">Word</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="3" IsEnabled="{Binding WordEnabled}" Text="{Binding WordText}"/>
         
-        <Label Grid.Row="4" Grid.Column="0">Language</Label>
-        <ComboBox Grid.Row="4" Grid.Column="1" IsEditable="True"></ComboBox>
+        <Label Grid.Row="6" Grid.Column="0">Language</Label>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="3" IsEnabled="{Binding WordEnabled}" Text="{Binding Language}"/>
+        <!--<ComboBox Name="LanguageBox"
+                  Grid.Row="6" Grid.Column="1"
+                  IsEditable="True" Margin="3"
+                  IsEnabled="{Binding WordEnabled}"
+                  ItemsSource="{Binding LanguageList}"
+                  SelectedValue="{Binding Language}"
+                  Text="{Binding NewLanguage}">
+        </ComboBox>-->
 
-        <Label Grid.Row="5" Grid.Column="0">Image</Label>
-        <Button Grid.Row="5" Grid.Column="1">Load</Button>
-        <Image Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0" MaxHeight="150" Source="C:\Users\se416237\Pictures\gVFAO.jpg"/>
-
-
+        <Button Grid.Row="7" Grid.Column="0" Margin="3" Command="{Binding Save}" Click="OnSave">Save</Button>
+        
     </Grid>
 </Window>

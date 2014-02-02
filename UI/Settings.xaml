@@ -1,24 +1,60 @@
 ﻿<Window x:Class="UI.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Settings" Background="#FFD48248" FontSize="18" SizeToContent="WidthAndHeight" MinWidth="250">
-    <StackPanel>
-        <Label>Question</Label>
-        <ComboBox></ComboBox>
-        
-        <Label>Anwser</Label>
-        <ComboBox></ComboBox>
-        
-        <Label>Selection method</Label>
-        <ComboBox></ComboBox>
-        
-        <Label>Level</Label>
-        <Slider Minimum="0" Maximum="10" Interval="1"></Slider>
-        
-        <Label>Categories</Label>
-        <ListBox SelectionMode="Multiple">
-            <ListBoxItem>Kolory</ListBoxItem>
-            <ListBoxItem>Samoloty</ListBoxItem>
-        </ListBox>
+        Title="Settings" Background="#FFD48248" FontSize="18" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Margin="5">
+            <Label>Question type</Label>
+            <ComboBox ItemsSource="{Binding ValueTypes}" SelectedItem="{Binding QuestionType}"></ComboBox>
+
+            <Label>Anwser type</Label>
+            <ComboBox ItemsSource="{Binding ValueTypes}" SelectedItem="{Binding AnwserType}"></ComboBox>
+
+            <Label>Difficulty Level</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" FontSize="12">Easy</Label>
+                <Slider Grid.Column="1"  Minimum="0" Maximum="10" Interval="1" Value="{Binding Level}"></Slider>
+                <Label Grid.Column="2"  FontSize="12">Hard</Label>
+            </Grid>
+            
+            <Label>Selection method</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="12">New</Label>
+                <Slider Grid.Row="0" Grid.Column="1"  Minimum="0" Maximum="100" Interval="1"></Slider>
+                <Label Grid.Row="0" Grid.Column="2"  FontSize="12">Old</Label>
+
+                <Label Grid.Row="1" Grid.Column="0" FontSize="12">Wrong</Label>
+                <Slider Grid.Row="1" Grid.Column="1"  Minimum="0" Maximum="100" Interval="1"></Slider>
+                <Label Grid.Row="1" Grid.Column="2"  FontSize="12">Correct</Label>
+            </Grid>
+
+        </StackPanel>
+
+        <DockPanel Margin="5">
+            <Label DockPanel.Dock="Top">Categories</Label>
+            <Button DockPanel.Dock="Bottom" Margin="3" Click="StartQuestionary">Start</Button>
+            <!--<TextBlock DockPanel.Dock="Bottom" Margin="3" Text="{Binding ResultCount}"/>-->
+            <ListBox DockPanel.Dock="Bottom"
+                     IsEnabled="False"
+                     MinWidth="120"
+                     MaxHeight="200"
+                     ItemsSource="{Binding AvalibleCategories}"
+                     DisplayMemberPath="Name">
+            </ListBox>
+        </DockPanel>
     </StackPanel>
 </Window>

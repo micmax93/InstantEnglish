@@ -37,7 +37,7 @@ namespace ConsoleTester
             //var buffer = new MemoryStream();
             //img.Save(buffer,ImageFormat.Jpeg);
             //da.GetItems().First().Image = buffer.ToArray();
-
+            
             //da.Save();
             Console.ReadKey();
         }

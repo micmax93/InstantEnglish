@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using ViewModel;
 
 namespace UI
 {
@@ -19,9 +10,19 @@ namespace UI
     /// </summary>
     public partial class EditDictionary : Window
     {
+        private DictionaryViewModel vm;
         public EditDictionary()
         {
             InitializeComponent();
+            vm = new DictionaryViewModel();
+            this.DataContext = vm;
+            vm.EditEntry +=OnEditEntry;
+        }
+
+        private void OnEditEntry(DictionaryEntryViewModel viewModel)
+        {
+            viewModel.OnEntrySave += entry => vm.SaveEntry(entry);
+            new EditEntry(viewModel).ShowDialog();
         }
     }
 }

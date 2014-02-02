@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using ViewModel;
 
 namespace UI
 {
@@ -14,7 +15,8 @@ namespace UI
 
         private void StartCourse(object sender, RoutedEventArgs e)
         {
-            var qw = new Questionary();
+            QuestionSet qs = new QuestionSet();
+            var qw = new Questionary(qs);
             qw.Owner = this;
             qw.ShowDialog();
         }
@@ -37,6 +39,11 @@ namespace UI
         {
             this.Hide();
             this.Close();
+        }
+
+        private void OpenStats(object sender, RoutedEventArgs e)
+        {
+            new UserStats().ShowDialog();
         }
     }
 }

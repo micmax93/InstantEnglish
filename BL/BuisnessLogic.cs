@@ -3,66 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using ElFartas.InstantEnglish.DAO;
 using ElFartas.InstantEnglish.Interfaces;
 
 namespace ElFartas.InstantEnglish.BL
 {
-    public class Value
-    {
-        public readonly string Text;
-        public readonly Image Image;
-        public bool IsImage
-        {
-            get { return Image != null; }
-        }
-
-        public Value(string text)
-        {
-            Text = text;
-            Image = null;
-        }
-        public Value(string text, Image image)
-        {
-            Text = text;
-            Image = image;
-        }
-        public Value(string text, byte[] image)
-        {
-            Text = text;
-            MemoryStream stream = new MemoryStream(image);
-            stream.Seek(0, SeekOrigin.Begin);
-            Image = Image.FromStream(stream);
-        }
-    }
-    public class Question
-    {
-        public Value QuestionValue;
-        public List<Value> AnswerValues;
-        public Value CorrectAnswerValue;
-    }
-
-    public enum QuestionType
-    {
-        Original,
-        Translation
-    }
-    public enum TranslationType
-    {
-        Image,
-        Language
-    }
-
-    public class LearningModel
-    {
-        public QuestionType QuestionType;
-        public TranslationType TranslationType;
-        public string Language;
-        public IUser User;
-        public ICategory Category = null;
-        public int AnwsersCount;
-    }
-
     public class SelectionMethod
     {
         public int Visits;
@@ -81,7 +27,7 @@ namespace ElFartas.InstantEnglish.BL
             leastVisited = stats.Where(s => (s.Correct + s.Failed) <= avgVisits).Select(s => s.ItemId).ToList();
 
             highestRated = stats.Where(s => (s.Correct / (s.Correct + s.Failed + 1)) > avgRatings).Select(s => s.ItemId).ToList();
-            lowesRated = stats.Where(s => (s.Correct / (s.Correct + s.Failed + 1)) > avgRatings).Select(s => s.ItemId).ToList();
+            lowesRated = stats.Where(s => (s.Correct / (s.Correct + s.Failed + 1)) <= avgRatings).Select(s => s.ItemId).ToList();
         }
 
         private void RemoveId(int id)

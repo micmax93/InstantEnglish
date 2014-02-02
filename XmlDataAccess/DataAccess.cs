@@ -11,7 +11,7 @@ namespace ElFartas.InstantEnglish.XmlDataAccess
 {
     public class DataAccess: IDataAccess
     {
-        private MyDictionary db;
+        private XmlDictionary db;
         public DataAccess()
         {
             try
@@ -20,18 +20,18 @@ namespace ElFartas.InstantEnglish.XmlDataAccess
                 var textReader = new XmlTextReader(path);
                 try
                 {
-                    var serializer = new XmlSerializer(typeof (MyDictionary));
-                    db = (MyDictionary) serializer.Deserialize(textReader);
+                    var serializer = new XmlSerializer(typeof (XmlDictionary));
+                    db = (XmlDictionary) serializer.Deserialize(textReader);
                 }
                 catch
                 {
-                    db = new MyDictionary();
+                    db = new XmlDictionary();
                 }
                 textReader.Close();
             }
             catch (Exception e)
             {
-                db = new MyDictionary();
+                db = new XmlDictionary();
             }
         }
 
@@ -217,7 +217,7 @@ namespace ElFartas.InstantEnglish.XmlDataAccess
             var path = ConfigurationManager.AppSettings["XmlDbPath"];
             TextWriter textWriter = new StreamWriter(path, false);
             
-            var serializer = new XmlSerializer(typeof(MyDictionary));
+            var serializer = new XmlSerializer(typeof(XmlDictionary));
             serializer.Serialize(textWriter, db);
 
             textWriter.Close();

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="UI.EditDictionary"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EditDictionary" SizeToContent="WidthAndHeight" Background="#FFD48248" FontSize="18">
+        Title="EditDictionary" SizeToContent="WidthAndHeight" Background="#FFD48248" FontSize="18" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -14,39 +14,37 @@
 
         <StackPanel Grid.Column="0" Margin="5">
             <Label>Category</Label>
-            <ListBox Height="150">
-                <ListBoxItem>[1] Colors</ListBoxItem>
-                <ListBoxItem>[3] Transport</ListBoxItem>
-                <ListBoxItem>[2] Animals</ListBoxItem>
+            <ListBox Height="150" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" DisplayMemberPath="Name">
+                <!--<ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding Deleteable, Mode=TwoWay}" />
+                            <Label Content="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>-->
             </ListBox>
-            <Button Margin="3">Add</Button>
-            <Button Margin="3">Edit</Button>
-            <Button Margin="3">Delete</Button>
+            <Button Margin="3" Command="{Binding AddCategory}">Add</Button>
+            <Button Margin="3" Command="{Binding EditCategory}">Edit</Button>
+            <Button Margin="3" Command="{Binding DeleteCategory}">Delete</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Margin="5">
             <Label>Item</Label>
-            <ListBox Height="150">
-                <ListBoxItem>White</ListBoxItem>
-                <ListBoxItem>Blue [img]</ListBoxItem>
-                <ListBoxItem>Yellow [img]</ListBoxItem>
-                <ListBoxItem>Green</ListBoxItem>
+            <ListBox Height="150" ItemsSource="{Binding Items, Mode=OneWay}" SelectedItem="{Binding SelectedItem}" DisplayMemberPath="Name">
             </ListBox>
-            <Button Margin="3">Add</Button>
-            <Button Margin="3">Edit</Button>
-            <Button Margin="3">Delete</Button>
+            <Button Margin="3" Command="{Binding AddItem}">Add</Button>
+            <Button Margin="3" Command="{Binding EditItem}">Edit</Button>
+            <Button Margin="3" Command="{Binding DeleteItem}">Delete</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Margin="5">
             <Label>Word</Label>
-            <ListBox Height="150">
-                <ListBoxItem>[Polski] Niebieski</ListBoxItem>
-                <ListBoxItem>[inny] blau</ListBoxItem>
-                <ListBoxItem>Zad trzy</ListBoxItem>
+            <ListBox Height="150" ItemsSource="{Binding Words, Mode=OneWay}" SelectedItem="{Binding SelectedWord}" DisplayMemberPath="Text">
             </ListBox>
-            <Button Margin="3">Add</Button>
-            <Button Margin="3">Edit</Button>
-            <Button Margin="3">Delete</Button>
+            <Button Margin="3" Command="{Binding AddWord}">Add</Button>
+            <Button Margin="3" Command="{Binding EditWord}">Edit</Button>
+            <Button Margin="3" Command="{Binding DeleteWord}">Delete</Button>
         </StackPanel>
 
 

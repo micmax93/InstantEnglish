@@ -1,38 +1,57 @@
 ﻿<Window x:Class="UI.Questionary"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Questionary" Background="#FFD48248" FontSize="22" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
-    <Grid>
+        Title="Questionary" Background="#FFD48248" FontSize="22" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid DataContext="{Binding Current}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <WrapPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-            <TextBlock>
-                And the question is?
-                What is mana mana?
-            </TextBlock>
-            <Button Click="StartSpeak"><Image Source="sound_icon.png" Height="22"/></Button>
+        <WrapPanel Name="QuestionPanel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Vertical">
+            <Image Stretch="None"  Source="{Binding Question.ImageSource}"/>
+            <WrapPanel>
+                <TextBlock TextAlignment="Center" Text="{Binding Question.Text}"/>
+                <Button Click="StartSpeak">
+                    <Image Source="sound_icon.png" Height="22"/>
+                </Button>
+            </WrapPanel>
         </WrapPanel>
-        
-        
-        <Button Grid.Column="0" Grid.Row="1" Margin="5">
-            <Image Source="C:\Users\micmax93\Pictures\coffee.jpg" Cursor="Hand"/>
+
+        <Button Name="AnwserA" Grid.Column="0" Grid.Row="1" Margin="5" Cursor="Hand" DataContext="{Binding AnwserA}" Click="OnAnwser">
+            <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <Image Stretch="None" Source="{Binding ImageSource}"/>
+                <TextBlock TextAlignment="Center" Text="{Binding Text}"/>
+            </WrapPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="1" Margin="5" Cursor="Hand">
-            42
+
+        <Button Name="AnwserB" Grid.Column="1" Grid.Row="1" Margin="5" Cursor="Hand" DataContext="{Binding AnwserB}" Click="OnAnwser">
+            <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <Image Stretch="None" Source="{Binding ImageSource}"/>
+                <TextBlock TextAlignment="Center" Text="{Binding Text}"/>
+            </WrapPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" Margin="5" Cursor="Hand">
-            Who cares?!
+
+        <Button Name="AnwserC" Grid.Column="0" Grid.Row="2" Margin="5" Cursor="Hand" DataContext="{Binding AnwserC}" Click="OnAnwser">
+            <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <Image Stretch="None" Source="{Binding ImageSource}"/>
+                <TextBlock TextAlignment="Center" Text="{Binding Text}"/>
+            </WrapPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Margin="5" Cursor="Hand">
-            <Image Source="C:\Users\micmax93\Pictures\avatar.jpg"/>
+
+        <Button Name="AnwserD" Grid.Column="1" Grid.Row="2" Margin="5" Cursor="Hand" DataContext="{Binding AnwserD}" Click="OnAnwser">
+            <WrapPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <Image Stretch="None" Source="{Binding ImageSource}"/>
+                <TextBlock TextAlignment="Center" Text="{Binding Text}"/>
+            </WrapPanel>
         </Button>
+
+
+
     </Grid>
 </Window>

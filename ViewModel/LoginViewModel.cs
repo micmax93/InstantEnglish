@@ -5,40 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using ElFartas.InstantEnglish.DAO;
+using ElFartas.InstantEnglish.Interfaces;
 using Microsoft.Expression.Interactivity.Core;
 
 namespace ViewModel
 {
-    public class SimpleCommand : ICommand
-    {
-        public delegate void Exec();
-        public delegate bool Check();
-
-        public SimpleCommand(Exec execFunc)
-        {
-            ExecFunc = execFunc;
-            
-        }
-        public Exec ExecFunc
-        {
-            get;
-            private set;
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
-        {
-            ExecFunc.Invoke();
-        }
-
-        public event EventHandler CanExecuteChanged;
-    }
+    
     public class LoginViewModel
     {
+        private IDataAccess dataAccess;
         public string Username
         {
             get;
@@ -68,27 +44,27 @@ namespace ViewModel
             return !(String.IsNullOrEmpty(Username)||String.IsNullOrEmpty(Password));
         }
 
-        void AuthtenticateUser()
+        public static IUser CurrentUser;
+        public bool AuthtenticateUser()
         {
-            //if (Password == "ha#lo")
-            //{
-            //    MessageBox.Show("Zalogowano");
-            //}
-            //else
-            //{
-            //    MessageBox.Show(Password);
-            //}
+            CurrentUser = dataAccess.GetUser(Username);
+            return CurrentUser != null && CurrentUser.Password == Password;
         }
 
-        void RegsterNewUser()
+        public bool RegsterNewUser()
         {
-            
+            if (dataAccess.GetUser(Username) != null)
+            {
+                return false;
+            }
+            dataAccess.AddUser(Username,Password);
+            dataAccess.Save();
+            return true;
         }
 
         public LoginViewModel()
         {
-            DoLogin = new SimpleCommand(AuthtenticateUser);
-            DoRegister = new SimpleCommand(RegsterNewUser);
+            dataAccess = DataProvider.GetDataAccess();
         }
 
     }

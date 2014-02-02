@@ -3,9 +3,9 @@ using ElFartas.InstantEnglish.Interfaces;
 
 namespace ElFartas.InstantEnglish.XmlDataAccess
 {
-    public class MyDictionary
+    public class XmlDictionary
     {
-        public MyDictionary()
+        public XmlDictionary()
         {
             Categories = new List<Category>();
             Items = new List<Item>();

@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using ElFartas.InstantEnglish.Interfaces;
 using ViewModel;
 
 namespace UI
@@ -30,11 +31,28 @@ namespace UI
 
         private void TryLogin(object sender, RoutedEventArgs e)
         {
+            if (!LoginVM.AuthtenticateUser())
+            {
+                MessageBox.Show("Invalid username or password");
+                return;
+            }
             var menu = new MainMenu();
             menu.Owner = this;
             menu.Closed += (o, args) => this.Show();
             this.Hide();
             menu.ShowDialog();
+        }
+
+        private void RegisterUser(object sender, RoutedEventArgs e)
+        {
+            if (LoginVM.RegsterNewUser())
+            {
+                TryLogin(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Cannot register user.");
+            }
         }
     }
 }
